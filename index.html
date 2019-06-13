@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Probando elementos de slide-down</title>
+  <style>
+  body {
+    font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  h1 {
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-top: 0;
+  }
+  .container {
+    max-width: 1100px;
+    width: 100%;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .logo {
+    width: 130px;
+    height: 46px;
+  }
+  .logo svg .letter {
+    fill: #303030;
+  }
+  .logo svg .icon {
+      fill: #e74c3c;
+  }
+  .menu {
+    margin-top: 10px;
+  } 
+  .horizontal-menu {
+    margin-bottom: 5px;
+  }
+  .horizontal-menu a {
+    display: inline-block;
+    margin-left: 15px;
+  }
+  
+  .vertical-menu a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    padding: 0 15px;
+  }
+  .vertical-menu a:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; 
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    color: #999;
+    font-style: italic;
+  }
+  .overlay {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 15px;
+  }
+  .openoverlay {
+    text-transform: uppercase;
+  }
+
+  @media(min-width: 700px) {
+    .logo {
+      width: 160px;
+      height: 55px;
+    }
+  }
+  </style>
+<link rel="preload" as="script" crossorigin="anonymous" href="./index.js"></head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg version="1.1" id="EIT" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 40" style="enable-background:new 0 0 116 40;" xml:space="preserve">
+          <path class="letter" d="M8.4,15.1H3.2v3.3H9V21H0V7h8.7v2.6H3.2v2.9h5.2V15.1z"></path>
+          <path class="letter" d="M11,17.7c0.9,0.4,2.2,0.9,3.5,0.9c1.5,0,2.2-0.6,2.2-1.5c0-0.9-0.7-1.4-2.3-2
+            c-2.3-0.8-3.8-2.1-3.8-4.1c0-2.4,2-4.2,5.3-4.2c1.6,0,2.7,0.3,3.6,0.7L18.7,10c-0.6-0.3-1.6-0.7-2.9-0.7s-2,0.6-2,1.3
+            c0,0.9,0.8,1.3,2.6,2c2.5,0.9,3.6,2.2,3.6,4.2c0,2.3-1.8,4.3-5.7,4.3c-1.6,0-3.2-0.4-4-0.9L11,17.7z"></path>
+          <path class="letter" d="M31.8,20.6c-0.6,0.3-1.9,0.6-3.6,0.6c-4.8,0-7.3-3-7.3-7c0-4.8,3.4-7.4,7.7-7.4
+            c1.6,0,2.9,0.3,3.5,0.6l-0.6,2.5c-0.6-0.3-1.5-0.5-2.7-0.5c-2.5,0-4.5,1.5-4.5,4.6c0,2.8,1.7,4.6,4.5,4.6c1,0,2-0.2,2.6-0.5
+            L31.8,20.6z"></path>
+          <path class="letter" d="M36.7,7v8.1c0,2.4,0.9,3.6,2.5,3.6c1.7,0,2.6-1.2,2.6-3.6V7H45v7.9c0,4.3-2.2,6.4-5.8,6.4
+            c-3.5,0-5.6-2-5.6-6.4V7H36.7z"></path>
+          <path class="letter" d="M55.4,15.1h-5.2v3.3H56V21h-9V7h8.7v2.6h-5.5v2.9h5.2V15.1z"></path>
+          <path class="letter" d="M58,7h3.2v11.3H67V21h-9V7z"></path>
+          <path class="letter" d="M72.5,17.4l-1,3.6h-3.3l4.3-14h4.2L81,21h-3.4l-1.1-3.6H72.5z M76.1,15l-0.9-3
+            c-0.2-0.8-0.5-1.9-0.7-2.7h0c-0.2,0.8-0.4,1.9-0.6,2.7L73,15H76.1z"></path>
+          <path class="icon" d="M85,0v28h15l16,12V0H85z M97.1,21h-3.2V7h3.2V21z M109.4,10.2h-3.6V21h-3.2V10.2H99V7h10.4V10.2z"></path>
+        </svg>
+      </div>
+      <div class="menu">
+        <menu-responsive>
+          <nav slot="menu-desktop" class="horizontal-menu">
+              <a href="#">Home</a>
+              <a href="#">Productos</a>
+              <a href="#">Servicios</a>
+              <a href="#">Contacto</a>
+          </nav>
+          <div slot="menu-mobile" class="menu-expanded">
+            <nav slot="menu-desktop" class="vertical-menu">
+                <a href="#">Home</a>
+                <a href="#">Productos</a>
+                <a href="#">Servicios</a>
+                <a href="#">Contacto</a>
+            </nav>
+          </div>
+        </menu-responsive>
+      </div>
+    </header>
+    <main>
+      <h1>Prueba con componentes de efecto slide-down</h1>
+      <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repellat modi distinctio cum.</p>
+      <div class="overlay">
+        <menu-overlay>
+          <span class="openoverlay" slot="trigger">Menú</span>
+          <h3>Esto es un overlay</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatibus animi ad aliquid enim consequuntur natus reprehenderit ullam qui. Expedita sit libero accusantium eius! Facilis velit molestiae quidem cupiditate sapiente.</p>
+        </menu-overlay>
+      </div>
+      <eit-ver-mas targetheight="300px">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum inventore eum laudantium sequi nam eos! Necessitatibus aliquid provident neque qui similique laboriosam blanditiis rem obcaecati, quas quod laudantium ad inventore.</p>
+        <p>Dolore sunt magni, id ut qui rerum, aliquam dolorem quod corporis consectetur autem? Delectus exercitationem quos sapiente obcaecati deleniti, temporibus nesciunt earum. Repellendus ipsa tempore ducimus laudantium cum iste nobis.</p>
+        <p>Reiciendis ratione quod, obcaecati provident itaque temporibus aut, aspernatur praesentium voluptatum optio vitae eveniet corporis doloremque dicta atque saepe cupiditate, ullam delectus dolor! Odio eveniet recusandae mollitia dolorum ipsa earum?</p>
+        <p>Ex porro explicabo labore veritatis suscipit necessitatibus cumque aspernatur nemo nam iste id optio maxime voluptate, repudiandae minus cum nobis! Voluptatem impedit optio possimus magni veritatis natus rerum architecto odit.</p>
+        <p>Vel quasi delectus, saepe incidunt, quidem aliquam nam recusandae, repellendus labore ullam cupiditate velit tenetur necessitatibus adipisci expedita reprehenderit ab libero accusantium eius dolorum. Praesentium perferendis ea animi eveniet nesciunt.</p>
+        <p>Omnis perspiciatis excepturi porro, a magni rerum distinctio vel iste consectetur temporibus nihil, ullam veritatis vero molestias! Qui sit praesentium, veniam repellendus aperiam corporis natus iure reiciendis explicabo eos soluta!</p>
+        <p>Qui quia ea totam ullam distinctio, impedit non sunt voluptatum dolore dignissimos obcaecati. Beatae officiis consectetur harum, quia vitae aperiam in ipsa molestiae cum exercitationem omnis. Officiis alias ipsa vero?</p>
+        <p>Iure id omnis, dolores eveniet laboriosam maxime nobis molestias ut atque optio quasi odit! Reiciendis fugiat porro, dolor, modi suscipit distinctio voluptate labore consequuntur accusantium omnis impedit veritatis dolores assumenda.</p>
+        <p>Atque, a obcaecati. Eligendi eveniet possimus unde consequatur aliquid consectetur recusandae doloribus officia laboriosam culpa quis ad qui mollitia molestiae dolores nisi nobis nihil, vitae architecto. Id quo alias provident!</p>
+        <p>Odio dolorem fugit suscipit enim praesentium numquam? Nihil provident voluptatibus quibusdam architecto necessitatibus ipsum totam iure! Perferendis nostrum nesciunt at molestiae error, rem perspiciatis dicta numquam laudantium, officiis et nam!</p>
+        <p>Cumque perspiciatis nihil culpa. Enim aliquam nihil voluptate, totam tempore, eveniet fugiat qui iusto assumenda odio optio dolorum explicabo libero. Nam consectetur veritatis accusantium doloremque molestias culpa laboriosam, exercitationem iusto!</p>
+        <p>Autem hic est, sequi ab voluptas fugit magnam facere. Iste, dolorem ipsum? Qui est doloribus nam magni! Vel in laboriosam deserunt ratione, labore incidunt, architecto voluptatem recusandae tenetur aliquid quae.</p>
+      </eit-ver-mas>
+    </main>
+  </div>
+
+  
+
+<script type="module">window.importModule=src=>import(src);</script><script type="module">
+      (async () => {
+        const p = [];
+        if (!('attachShadow' in Element.prototype) || !('getRootNode' in Element.prototype)) {p.push('./polyfills/webcomponent-polyfills.js');}
+        if (!window.importModule) {p.push('./polyfills/dynamic-import-polyfill.js');}
+        if (p.length > 0) {await Promise.all(p.map(p => new Promise((rs, rj) => {const s = document.createElement('script');s.src = p;s.onerror = () => rj(`Failed to load ${s.s}`);s.onload = () => rs();document.head.appendChild(s);})));}
+        importModule('./index.js');
+      })();
+    </script><script src="./polyfills/babel-polyfills.js" nomodule=""></script><script src="./polyfills/webcomponent-polyfills.js" nomodule=""></script><script src="./polyfills/system-loader.js" nomodule=""></script><script nomodule="">System.import('./legacy/index.js');</script></body></html>
