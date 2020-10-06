@@ -12,9 +12,9 @@
     "lit-element": "^2.0.1"
   },
   "devDependencies": {
-    "owc-dev-server": "^0.3.0",
     "@open-wc/building-rollup": "^0.3.0",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.3",
+    "owc-dev-server": "^0.3.0",
     "rimraf": "^2.6.3",
     "rollup": "^1.6.0"
   }
